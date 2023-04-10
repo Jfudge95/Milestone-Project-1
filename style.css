@@ -1,12 +1,19 @@
 /* Find Background Image */
 .map {
   width: 600px;
-  height: 600px;
+  height: 800px;
   position: relative;
-  font-size: 80px;
+  background-image: url(Backery\ Background.jpg);
+  font-size: 100px;
   text-align: center;
 }
 
 /*Style Character Below */
+.character {
+  width: 85px;
+  height: 85px;
+  background-image: url(Baker\ Character.png);
+  position: relative;
+}
 
 /*Style H1 Below */
