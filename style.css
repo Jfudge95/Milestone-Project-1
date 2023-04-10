@@ -12,15 +12,15 @@
 .character {
   width: 85px;
   height: 85px;
-  background-image: url(Baker\ Character.png);
-  position: relative;
+  background-color: red;
+  position: absolute;
 }
 
 /*Style Platform Below*/
 .platform {
   width: 85px;
   height: 20px;
-  background-image: url(Platform.jpg);
+  background-color: blue;
   position: absolute;
 }
 
