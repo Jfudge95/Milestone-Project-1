@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGameOver = false;
   let platformCount = 5;
   let platforms = [];
+  let upTimerId;
+  let downTimerId;
 
   function createCharacter() {
     map.appendChild(character);
@@ -46,7 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function jump() {}
+  function jump() {
+    clearInterval(downTimerId);
+    upTimerId = setInterval(function () {
+      characterBottomSpace += 20;
+      character.style.bottom = characterBottomSpace + "px";
+      if (characterBottomSpace > 350) {
+        fall();
+      }
+    }, 30);
+  }
+
+  function fall() {
+    clearInterval(upTimerId);
+    downTimerId = setInterval(function () {
+      characterBottomSpace -= 5;
+      character.style.bottom = characterBottomSpace + "px";
+    }, 30);
+  }
 
   function start() {
     if (isGameOver == false) {
