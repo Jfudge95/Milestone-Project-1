@@ -19,8 +19,8 @@
 /*Style Platform Below*/
 .platform {
   width: 85px;
-  height: 20px;
-  background-color: blue;
+  height: 22px;
+  background-image: url(Bread_Platform.png);
   position: absolute;
 }
 
