@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isGoingRight = false;
   let leftTimerID;
   let rightTimerId;
-
+  let score = 0;
+  // Character Creation
   function createCharacter() {
     map.appendChild(character);
     character.classList.add("character");
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       map.appendChild(visual);
     }
   }
-
+  // Platform Creation
   function createPlatforms() {
     for (let i = 0; i < platformCount; i++) {
       let platformGap = 800 / platformCount;
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       platforms.push(newPlatform);
     }
   }
+  // Platform Movement and Score
   function movePlatforms() {
     if (characterBottomSpace > 200) {
       platforms.forEach((platform) => {
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
+          score++;
           console.log(platforms);
           let newPlatform = new Platform(800);
           platforms.push(newPlatform);
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
+  // Character Jumping
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
@@ -75,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 30);
   }
-
+  // Character Fall Mechanics
   function fall() {
     clearInterval(upTimerId);
     isJumping = false;
@@ -100,15 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 30);
   }
+  // Game over functionality
   function gameOver() {
     console.log("Game Over Chef!");
     isGameOver = true;
+    while (map.firstChild) {
+      map.removeChild(map.firstChild);
+    }
+    map.innerHTML = "Game Over Score:" + score;
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerID);
     clearInterval(rightTimerId);
   }
-
+  // Character Movement keys
   function control(e) {
     if (e.key === "ArrowLeft") {
       moveLeft();
@@ -152,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(rightTimerId);
     clearInterval(leftTimerID);
   }
-
+  // Start it!
   function start() {
     if (isGameOver == false) {
       createPlatforms();

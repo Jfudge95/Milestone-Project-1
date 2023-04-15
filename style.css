@@ -3,9 +3,10 @@
   width: 600px;
   height: 800px;
   position: relative;
-  background-image: url(Backery\ Background.jpg);
-  font-size: 100px;
+  background-image: url(Bakery\ Background.jpg);
+  font-size: 150px;
   text-align: center;
+  color: brown;
 }
 
 /*Style Character Below */
@@ -25,3 +26,7 @@
 }
 
 /*Style H1 Below */
+h1 {
+  color: brown;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
