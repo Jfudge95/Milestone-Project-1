@@ -7,7 +7,7 @@ Background: Bakery Bounce is a game developed by myself for my coding Bootcamp. 
 
 
 
-Instructions:Use your left and right arrow keys on your keyboard to move Chef Hamster. The more loaves of bread you climb without falling, the higher your score. Most importantly Have Fun!
+Instructions:Use your left and right arrow keys on your keyboard to move Chef Hamster, while your up arrow will keep him in place. The more loaves of bread you climb, the higher your score. Most importantly Have Fun!
 
 
 
